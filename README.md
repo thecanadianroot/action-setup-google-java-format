@@ -16,7 +16,7 @@ which suggests changes within your pull requests.
 steps:
   - name: Setup google-java-format
     id: setup-google-java-format
-    uses: thecanadianroot/action-setup-google-java-format@main
+    uses: thecanadianroot/action-setup-google-java-format@v1
     with:
       token: ${{ github.token }} # optional
       install-path: ${{ github.workspace }} # optional
