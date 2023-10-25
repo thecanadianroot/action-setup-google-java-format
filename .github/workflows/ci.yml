@@ -49,7 +49,7 @@ jobs:
         id: latest-google-java-format
         uses: ./
         with:
-          force-download: true
+          ignore-cached-install: true
 
       - name: Test google-java-format works
         shell: bash

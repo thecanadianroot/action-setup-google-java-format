@@ -3,12 +3,12 @@
 [![GitHub Super-Linter](https://github.com/actions/typescript-action/actions/workflows/linter.yml/badge.svg)](https://github.com/super-linter/super-linter)
 ![CI](https://github.com/actions/typescript-action/actions/workflows/ci.yml/badge.svg)
 
-This action downloads google-java-format on your runner so that it can be used easily on your jobs.
+This action downloads google-java-format on your runner
+so that it can be used easily on your jobs.
 
-It is also meant to be used
-with [action-google-java-format](https://github.com/thecanadianroot/action-google-java-format) which suggests changes
-within
-your pull requests.
+It is also meant to be used with
+[action-google-java-format](https://github.com/thecanadianroot/action-google-java-format)
+which suggests changes within your pull requests.
 
 ## Usage
 
