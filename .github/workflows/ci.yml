@@ -60,14 +60,13 @@ jobs:
         id: specific-google-java-format
         uses: ./
         with:
-          force-download: true
           version: v1.18.0
+          ignore-cached-install: true
 
       - name: Test google-java-format works
         shell: bash
         run: |
-          version=$(java -jar ${{ steps.specific-google-java-format.outputs.path }} --version)
-          echo "$version"
+          version="$(java -jar ${{ steps.specific-google-java-format.outputs.path }} --version 2>&1)"
           if [[ "$version" == "google-java-format: Version 1.18.0" ]]; then
             exit 0
           else
