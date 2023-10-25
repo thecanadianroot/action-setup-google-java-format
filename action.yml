@@ -1,18 +1,28 @@
-name: 'The name of your action here'
-description: 'Provide a description here'
-author: 'Your name or organization here'
+name: 'Setup google-java-format'
+description: 'Sets up google-java-format for usage within your jobs.'
+author: 'thecanadianroot'
 
-# Define your inputs here.
 inputs:
-  milliseconds:
-    description: 'Your input description here'
+  token:
+    description: 'The Github token.'
+    default: ${{ github.token }}
+  install-path:
+    description: 'The install path for google-java-format. (defaults to current directory).'
+    default: ${{ github.workspace }}
+  version:
+    description: 'The google-java-format version. (defaults to latest).'
     required: true
-    default: '1000'
+    default: 'latest'
+  ignore-cached-install:
+    description: 'Ignore cached install and install anyway? (defaults to false).'
+    required: false
+    default: 'false'
 
-# Define your outputs here.
 outputs:
-  time:
-    description: 'Your output description here'
+  path:
+    description: 'The install path of google-java-format.'
+  version:
+    description: 'The installed version of google-java-format.'
 
 runs:
   using: node20

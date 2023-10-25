@@ -30,21 +30,18 @@ jobs:
 
     steps:
       - name: Checkout
-        id: checkout
         uses: actions/checkout@v4
 
       - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: 20
           cache: npm
 
       - name: Install Dependencies
-        id: install
         run: npm ci
 
       - name: Build dist/ Directory
-        id: build
         run: npm run bundle
 
       - name: Compare Expected and Actual Directories
