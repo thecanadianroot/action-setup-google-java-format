@@ -10,14 +10,9 @@ import * as core from '@actions/core'
 import * as main from '../src/main'
 import { expect } from '@jest/globals'
 
-// Mock the GitHub Actions core library
-// const infoMock = jest.spyOn(core, 'info')
 const getInputMock = jest.spyOn(core, 'getInput')
 const getBooleanInputMock = jest.spyOn(core, 'getBooleanInput')
-// const setFailedMock = jest.spyOn(core, 'setFailed')
-// const setOutputMock = jest.spyOn(core, 'setOutput')
 
-// Mock the action's main function
 const runMock = jest.spyOn(main, 'run')
 
 describe('action', () => {

@@ -17,7 +17,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: 18
           cache: npm
@@ -68,4 +68,9 @@ jobs:
       - name: Test google-java-format works
         shell: bash
         run: |
-          java -jar ${{ steps.latest-google-java-format.outputs.path }} --version
+          version=$(java -jar ${{ steps.particular-google-java-format.outputs.path }} --version)
+          if [[ "$version" == "google-java-format: Version 1.18.0" ]]; then
+            exit 0
+          else
+            exit 1
+          fi
